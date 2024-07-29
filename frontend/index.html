@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- landing page -->
+    <header class="header">
+        <div class="welcome-message">
+            <h3 style="text-align: center; color: rgb(202, 202, 57); padding: 15px;">School Administration Site</h3>
+            <p style="text-align: center; color: white; font-size: small;">WELCOME ADMIN-CREATE, READ, UPDATE, DELETE-ANY USER</p>
+        </div>
+    </header>
+    <h1 id="addStudentsHeader">Student Registration Portal</h1>
+    <!-- main section -->
+    <section class="container" id="container1">
+
+        <!-- wraps the form -->
+        <div class="form-container">
+            <h2 style="margin-bottom: 5%;">Add Students</h2>
+            <form action="#" id="student-form">
+                <label for="student-id">Student ID</label>
+                <input type="text" id="student-id" name="student-id" placeholder="Student ID" required>
+
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Student Name" required>
+
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Student Surname" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Student Email" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Student Phone Number" required>
+
+                <div id="buttons-container">
+                    <button type="submit" id="submitBtn">Submit</button>
+                    <button type="submit" id="clearBtn" onclick="showStudentRecords()">Show Records</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <h1 style="padding: 20px;" id="studentRecords">Student Records</h1>
+     <!-- Add search input -->
+    
+    <!-- table for student records-->
+    <i class="bi bi-arrow-left" id="bi" onclick="hideStudentRecords()"></i>
+    <section class="container" id="container2">
+        <label for="search" style="font-weight: bolder;">Search</label>
+        <input type="text" name="search" id="myInput" onkeyup="myFunction()" placeholder="Search for students by ID" style="width: 30%;">
+        <div class="table-container">
+            <table id="student-table">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Student records will be displayed here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        function myFunction() {
+          // Declare variables
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          table = document.getElementById("student-table");
+          tr = table.getElementsByTagName("tr");
+        
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            }
+          }
+        }
+        </script>
+</body>
+</html>

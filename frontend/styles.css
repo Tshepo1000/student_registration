@@ -1,0 +1,214 @@
+/* resets default styles to provide a clean slate */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* font for entire page */
+body{
+    font-family: 'Arial', sans-serif;
+}
+
+/* soft background colour, centers content */
+html, body{
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+/* style links */
+a{
+    text-decoration: none;
+    color: #007BFF;
+}
+
+/* responsive, centered container */
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* header section */
+.header{
+    width: 100%;
+    height: 100px;
+    background-color: #0056b3;
+}
+
+h1{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+
+/* buttons */
+#submitBtn, #clearBtn{
+    width: 150px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-btn, .delete-btn{
+    width: 60px;
+    height: 25px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-btn{
+    background-color: navy;
+}
+
+.delete-btn{
+    background-color: red;
+}
+
+.delete-btn:hover{
+    background-color: rgb(240, 76, 11);
+}
+
+.edit-btn:hover{
+    background-color: #007BFF;
+}
+
+#buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 200%;
+}
+
+#submitBtn:hover, #clearBtn:hover{
+    background-color: #0056b3;
+}
+
+/* highlights important elements with a soft shadow*/
+.highlights{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* aligns form elements*/
+.form-container #student-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+input, label{
+    margin-bottom: 5%;
+    font-size: 13px;
+    padding: 5px;
+}
+
+/* table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* table rows and columns lines */
+tr{
+    border-bottom: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    font-size: small
+}
+
+/* toggle between adding students and viewing records */
+#container2, #studentRecords, #bi{
+    display: none;
+}
+
+/* back icon */
+.bi{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    font-size: large;
+}
+
+.bi:hover{
+    font-size: 20px;
+    color: #031425;
+}
+
+/* responsive layout */
+@media screen and (max-width: 768px){
+    .container{
+        width: 100%;
+    }   
+
+    .form-container #student-form{   
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+    }
+
+    input, label{
+        max-width: 760px;
+        font-size: 14px;
+        padding: 3px;
+    }
+
+    label{
+        margin-top: 3%;
+        margin-bottom: 1%;
+    }
+
+    #buttons-container{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #submitBtn, #clearBtn{
+        width: 120px;
+        font-size: 10px;
+    }
+
+    h1{
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* back icon */
+.bi{
+    top: 3%;
+}
+    
+}
+
+/* responsive design for mobile devices
+@media (max-width: 768px){
+    .container{
+        padding: 10px;
+    }
+
+    button{
+        padding: 8px 16px;
+    } */
+/* } */
